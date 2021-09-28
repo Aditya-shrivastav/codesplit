@@ -21,9 +21,9 @@ const AboutScreen = () => {
           About Us
         </h1>
       </Row>
-      <Container className='my-5'>
+      <Container className='my-4'>
         <h1 className='text-center'>Development Team</h1>
-        <Row className='justify-content-center space my-5'>
+        <Row className='justify-content-center space my-3'>
           <Card className='mx-3 my-2 py-2 card' style={{ width: '18rem' }}>
             <Card.Img
               className='mx-auto my-2'
