@@ -1,3 +1,11 @@
 main {
   min-height: 80vh;
 }
+
+.brand {
+  font-size: 1.6rem;
+}
+
+.card {
+  box-shadow: 5px 5px 10px #999999, -5px 0px 10px #b6b6b6;
+}
