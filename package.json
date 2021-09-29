@@ -4,8 +4,17 @@
   "description": "real-time collaborative text-editor",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon backend/index.js",
+    "client": "npm --prefix frontend start",
+    "dev": "concrrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "team",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.2.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13",
+    "path": "^0.12.7"
+  }
 }
