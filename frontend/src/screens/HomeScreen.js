@@ -27,7 +27,7 @@ const HomeScreen = () => {
             </Row>
           </Col>
           <Col xs={12} md={6} lg={7}>
-            <Image src='/images/mac.png' alt='macbook' fluid />
+            <Image src='/images/mac.png' fluid />
           </Col>
         </Row>
       </Container>
