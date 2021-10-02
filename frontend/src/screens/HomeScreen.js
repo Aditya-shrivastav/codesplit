@@ -5,8 +5,8 @@ const HomeScreen = () => {
   return (
     <>
       <Container>
-        <Row style={{ minHeight: '70vh' }} className='align-items-center my-3'>
-          <Col xs={12} md={6} lg={5}>
+        <Row style={{ minHeight: '80vh' }} className='p-3 align-items-center'>
+          <Col xs={12} md={6} className='px-md-5 px-3 my-auto'>
             <h1 className='homeScreen-title'>CodeSplit!</h1>
             <h1 className='homeScreen-title'>Collaborate in Real Time</h1>
             <Row className='mt-5 btn-row'>
@@ -26,7 +26,7 @@ const HomeScreen = () => {
               </Button>
             </Row>
           </Col>
-          <Col xs={12} md={6} lg={7}>
+          <Col xs={12} md={6} className='px-md-5'>
             <Image src='/images/mac.png' fluid />
           </Col>
         </Row>

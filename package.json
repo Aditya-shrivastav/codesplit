@@ -6,15 +6,14 @@
   "scripts": {
     "server": "nodemon backend/index.js",
     "client": "npm --prefix frontend start",
-    "dev": "concrrently \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "team",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^6.2.2",
+    "concurrently": "^6.3.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.13",
-    "path": "^0.12.7"
+    "nodemon": "^2.0.13"
   }
 }
