@@ -22,7 +22,13 @@ a {
 
 .btn {
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
+  padding: 8px 25px;
+  border-radius: 5px;
+}
+
+.btn:focus {
+  box-shadow: none;
 }
 
 .homeScreen-title {
@@ -33,6 +39,12 @@ a {
 .homeScreen-btn {
   width: 150px;
   border-radius: 25px;
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.lang-options {
+  font-size: 18px;
 }
 
 @media (max-width: 600px) {
