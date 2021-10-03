@@ -4,7 +4,10 @@ import { Container, Row, Col } from 'react-bootstrap'
 const FormContainer = ({ children }) => {
   return (
     <Container>
-      <Row className='justify-content-md-center'>
+      <Row
+        style={{ minHeight: '70vh' }}
+        className='justify-content-md-center align-items-center'
+      >
         <Col xs={12} md={6}>
           {children}
         </Col>

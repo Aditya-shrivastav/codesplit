@@ -25,9 +25,9 @@ const HomeScreen = () => {
   }
 
   return (
-    <>
+    <div className='home-screen'>
       <Container>
-        <Row style={{ minHeight: '80vh' }} className='p-3 align-items-center'>
+        <Row className='p-3 align-items-center'>
           <Col xs={12} md={6} className='px-lg-5 px-3 my-auto'>
             <h1 className='homeScreen-title'>CodeSplit!</h1>
             <h1 className='homeScreen-title'>Collaborate in Real Time</h1>
@@ -73,14 +73,10 @@ const HomeScreen = () => {
               </Form.Control>
             </Modal.Body>
             <Modal.Footer>
-              <Button className='btn' onClick={handleCreate}>
+              <Button type='button' onClick={handleCreate}>
                 Create
               </Button>
-              <Button
-                variant='secondary'
-                className='btn'
-                onClick={() => setModalShow(false)}
-              >
+              <Button variant='secondary' onClick={() => setModalShow(false)}>
                 Cancel
               </Button>
             </Modal.Footer>
@@ -94,24 +90,24 @@ const HomeScreen = () => {
           >
             <Modal.Body>
               <h2 className='text-center p-3'>Enter Room Id</h2>
-              <Form.Control placeholder='Enter Room Id' className='my-3' />
+              <Form.Control
+                type='text'
+                placeholder='Enter Room Id'
+                className='my-3'
+              />
             </Modal.Body>
             <Modal.Footer>
-              <Button className='btn' onClick={handleJoin}>
+              <Button type='button' onClick={handleJoin}>
                 Join
               </Button>
-              <Button
-                variant='secondary'
-                className='btn'
-                onClick={() => setModalShow(false)}
-              >
+              <Button variant='secondary' onClick={() => setModalShow(false)}>
                 Cancel
               </Button>
             </Modal.Footer>
           </Modal>
         )}
       </Container>
-    </>
+    </div>
   )
 }
 

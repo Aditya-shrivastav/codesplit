@@ -16,9 +16,9 @@ const LoginScreen = () => {
 
   return (
     <FormContainer>
-      <Card className='my-3'>
+      <Card className='my-3 p-2'>
         <Card.Body>
-          <Card.Title className='text-center' as='h2'>
+          <Card.Title className='text-center mt-4 mb-3' as='h2'>
             Sign In
           </Card.Title>
           <Form onSubmit={submitHandler}>
@@ -40,12 +40,12 @@ const LoginScreen = () => {
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Button className='btn my-2' type='submit' variant='primary'>
+            <Button className='btn my-3' type='submit' variant='primary'>
               Sign In
             </Button>
           </Form>
-          <Row>
-            <Col>
+          <Row className='py-3'>
+            <Col className='text-center'>
               New Customer? <Link to='/register'>Register</Link>
             </Col>
           </Row>

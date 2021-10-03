@@ -1,0 +1,99 @@
+body {
+  background: #fafafa;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  border-radius: 5px;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus {
+  box-shadow: none;
+  border: 1.5px solid #007fff;
+  outline: none;
+}
+
+main {
+  height: calc(100vh - 4.5rem - 3rem);
+}
+
+header {
+  .brand {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .nav-link {
+    font-size: 1.3rem;
+  }
+}
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  padding: 8px 25px;
+  border-radius: 5px;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.card {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.home-screen {
+  height: 100%;
+  .container {
+    height: 100%;
+    .row {
+      height: 100%;
+      .homeScreen-title {
+        font-size: 4rem;
+        font-weight: 500;
+      }
+
+      .homeScreen-btn {
+        width: 150px;
+        border-radius: 25px;
+        font-size: 18px;
+        font-weight: 550;
+      }
+      .btn-row {
+        .btn {
+          border-radius: 25px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  height: 3rem;
+}
+
+@media (max-width: 600px) {
+  .homeScreen-title {
+    font-size: 2.8rem;
+    text-align: center !important;
+  }
+
+  .btn-row {
+    justify-content: center;
+  }
+}
