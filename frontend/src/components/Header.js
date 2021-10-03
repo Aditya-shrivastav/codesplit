@@ -5,13 +5,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap'
 const Header = () => {
   return (
     <header>
-      <Navbar
-        style={{ height: '4.5em' }}
-        bg='primary'
-        variant='dark'
-        expand='lg'
-        collapseOnSelect
-      >
+      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand className='brand'>CodeSplit</Navbar.Brand>

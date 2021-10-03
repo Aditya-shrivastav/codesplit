@@ -27,10 +27,6 @@ input[type='password']:focus {
   outline: none;
 }
 
-main {
-  height: calc(100vh - 4.5rem - 3rem);
-}
-
 header .brand {
   font-size: 1.8rem;
   font-weight: 600;
@@ -47,7 +43,8 @@ header .nav-link {
   border-radius: 5px;
 }
 
-.btn:focus {
+.btn:focus,
+.navbar-toggler:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -60,31 +57,55 @@ header .nav-link {
 }
 
 .home-screen {
-  height: 100%;
+  min-height: calc(100vh - 5rem - 3.5rem);
 }
 
-.home-screen .container {
-  height: 100%;
+.home-screen .home-row {
+  min-height: calc(100vh - 5rem - 3.5rem);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.home-screen .container .row {
-  height: 100%;
-}
-
-.home-screen .container .row .homeScreen-title {
+.home-screen .home-row .homeScreen-title {
   font-size: 4rem;
   font-weight: 500;
 }
 
-.home-screen .container .row .homeScreen-btn {
+.home-screen .home-row .homeScreen-btn {
   width: 150px;
   border-radius: 25px;
   font-size: 18px;
   font-weight: 550;
 }
 
-.home-screen .container .row .btn-row .btn {
+.home-screen .home-row .btn-row .btn {
   border-radius: 25px;
+}
+
+.about-screen {
+  min-height: calc(100vh - 5rem - 3.5rem);
+}
+
+.about-screen .about-row {
+  min-height: calc(100vh - 5rem - 3.5rem);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auth-screen {
+  min-height: calc(100vh - 5rem - 3.5rem);
+}
+
+.auth-screen .auth-row {
+  min-height: calc(100vh - 5rem - 3.5rem);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer {
@@ -92,7 +113,10 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .homeScreen-title {
+  .home-screen .home-row {
+    height: 100%;
+  }
+  .home-screen .home-row .homeScreen-title {
     font-size: 2.8rem;
     text-align: center !important;
   }

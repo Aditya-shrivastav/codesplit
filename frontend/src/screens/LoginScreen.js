@@ -6,6 +6,7 @@ import FormContainer from '../components/FormContainer'
 const LoginScreen = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [checked, setChecked] = useState(false)
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -39,6 +40,14 @@ const LoginScreen = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
+            </Form.Group>
+            <Form.Group className='my-3' controlId='remember-me'>
+              <Form.Check
+                checked={checked}
+                onChange={(e) => setChecked(e.target.checked)}
+                type='checkbox'
+                label='Remember Me'
+              />
             </Form.Group>
             <Button className='btn my-3' type='submit' variant='primary'>
               Sign In

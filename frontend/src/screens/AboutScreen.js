@@ -5,9 +5,9 @@ const AboutScreen = () => {
   const bg = '/images/aboutbg.png'
 
   return (
-    <>
+    <div className='about-screen'>
       <Row
-        className='align-items-center m-auto'
+        className='about-row m-auto'
         style={{
           minHeight: '35vh',
           backgroundImage: `url(${bg})`,
@@ -50,7 +50,7 @@ const AboutScreen = () => {
           </Card>
         </Row>
       </Container>
-    </>
+    </div>
   )
 }
 

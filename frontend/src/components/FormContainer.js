@@ -3,16 +3,15 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const FormContainer = ({ children }) => {
   return (
-    <Container>
-      <Row
-        style={{ minHeight: '70vh' }}
-        className='justify-content-md-center align-items-center'
-      >
-        <Col xs={12} md={6}>
-          {children}
-        </Col>
-      </Row>
-    </Container>
+    <div className='auth-screen'>
+      <Container>
+        <Row className='auth-row'>
+          <Col xs={12} md={7} xl={6}>
+            {children}
+          </Col>
+        </Row>
+      </Container>
+    </div>
   )
 }
 

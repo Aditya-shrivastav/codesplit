@@ -27,7 +27,7 @@ const HomeScreen = () => {
   return (
     <div className='home-screen'>
       <Container>
-        <Row className='p-3 align-items-center'>
+        <Row className='p-3 home-row'>
           <Col xs={12} md={6} className='px-lg-5 px-3 my-auto'>
             <h1 className='homeScreen-title'>CodeSplit!</h1>
             <h1 className='homeScreen-title'>Collaborate in Real Time</h1>

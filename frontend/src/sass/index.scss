@@ -26,10 +26,6 @@ input[type='password']:focus {
   outline: none;
 }
 
-main {
-  height: calc(100vh - 4.5rem - 3rem);
-}
-
 header {
   .brand {
     font-size: 1.8rem;
@@ -47,7 +43,8 @@ header {
   border-radius: 5px;
 }
 
-.btn:focus {
+.btn:focus,
+.navbar-toggler:focus {
   box-shadow: none;
 }
 
@@ -58,28 +55,42 @@ header {
 }
 
 .home-screen {
-  height: 100%;
-  .container {
-    height: 100%;
-    .row {
-      height: 100%;
-      .homeScreen-title {
-        font-size: 4rem;
-        font-weight: 500;
-      }
-
-      .homeScreen-btn {
-        width: 150px;
+  min-height: calc(100vh - 5rem - 3.5rem);
+  .home-row {
+    min-height: calc(100vh - 5rem - 3.5rem);
+    align-items: center;
+    .homeScreen-title {
+      font-size: 4rem;
+      font-weight: 500;
+    }
+    .homeScreen-btn {
+      width: 150px;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: 550;
+    }
+    .btn-row {
+      .btn {
         border-radius: 25px;
-        font-size: 18px;
-        font-weight: 550;
-      }
-      .btn-row {
-        .btn {
-          border-radius: 25px;
-        }
       }
     }
+  }
+}
+
+.about-screen {
+  min-height: calc(100vh - 5rem - 3.5rem);
+  .about-row {
+    min-height: calc(100vh - 5rem - 3.5rem);
+    align-items: center;
+  }
+}
+
+.auth-screen {
+  min-height: calc(100vh - 5rem - 3.5rem);
+  .auth-row {
+    min-height: calc(100vh - 5rem - 3.5rem);
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -88,9 +99,14 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .homeScreen-title {
-    font-size: 2.8rem;
-    text-align: center !important;
+  .home-screen {
+    .home-row {
+      height: 100%;
+      .homeScreen-title {
+        font-size: 2.8rem;
+        text-align: center !important;
+      }
+    }
   }
 
   .btn-row {
