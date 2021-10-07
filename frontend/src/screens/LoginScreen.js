@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Form, Button, Card } from 'react-bootstrap'
 import FormContainer from '../components/FormContainer'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('')
@@ -16,51 +18,55 @@ const LoginScreen = () => {
   }
 
   return (
-    <FormContainer>
-      <Card className='my-3 p-2'>
-        <Card.Body>
-          <Card.Title className='text-center mt-4 mb-3' as='h2'>
-            Sign In
-          </Card.Title>
-          <Form onSubmit={submitHandler}>
-            <Form.Group className='my-2' controlId='email'>
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type='email'
-                placeholder='Enter your Email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
-            <Form.Group className='my-2' controlId='password'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type='password'
-                placeholder='Enter your Password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
-            <Form.Group className='my-3' controlId='remember-me'>
-              <Form.Check
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-                type='checkbox'
-                label='Remember Me'
-              />
-            </Form.Group>
-            <Button className='btn my-3' type='submit' variant='primary'>
+    <>
+      <Header />
+      <FormContainer>
+        <Card className="my-3 p-2">
+          <Card.Body>
+            <Card.Title className="text-center mt-4 mb-3" as="h2">
               Sign In
-            </Button>
-          </Form>
-          <Row className='py-3'>
-            <Col className='text-center'>
-              New Customer? <Link to='/register'>Register</Link>
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
-    </FormContainer>
+            </Card.Title>
+            <Form onSubmit={submitHandler}>
+              <Form.Group className="my-2" controlId="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group className="my-2" controlId="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Enter your Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group className="my-3" controlId="remember-me">
+                <Form.Check
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
+                  type="checkbox"
+                  label="Remember Me"
+                />
+              </Form.Group>
+              <Button className="btn my-3" type="submit" variant="primary">
+                Sign In
+              </Button>
+            </Form>
+            <Row className="py-3">
+              <Col className="text-center">
+                New Customer? <Link to="/register">Register</Link>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      </FormContainer>
+      <Footer />
+    </>
   )
 }
 
