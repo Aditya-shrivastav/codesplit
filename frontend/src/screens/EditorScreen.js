@@ -1,4 +1,6 @@
 import React from 'react'
+import { Row } from 'react-bootstrap'
+import Split from 'react-split'
 
 import Editor from '../components/Editor'
 import EditorSideNav from '../components/EditorSideNav'
@@ -12,12 +14,25 @@ const EditorScreen = () => {
         <div className="sidenav-column">
           <EditorSideNav />
         </div>
-        <div className="detail-column">
-          <h1></h1>
-        </div>
-        <div className="editor-column">
-          <Editor />
-        </div>
+        <Split
+          className="split-screen-column"
+          sizes={[12, 88]}
+          minSize={[5, 95]}
+          expandToMin={false}
+          gutterSize={3}
+          gutterAlign="center"
+          snapOffset={30}
+          dragInterval={1}
+          direction="horizontal"
+          cursor="col-resize"
+        >
+          <div className="detail-column">
+            <h1 className="m-0"></h1>
+          </div>
+          <div className="editor-column">
+            <Editor />
+          </div>
+        </Split>
       </div>
     </div>
   )

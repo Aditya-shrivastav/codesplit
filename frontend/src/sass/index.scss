@@ -57,6 +57,7 @@ header {
 .home-screen {
   min-height: 100vh;
   .home-row {
+    height: calc(100vh - 4.5rem - 4rem);
     align-items: center;
     .homeScreen-title {
       font-size: 4rem;
@@ -84,10 +85,18 @@ header {
 }
 
 .auth-screen {
-  min-height: calc(100vh);
+  min-height: calc(100vh - 8.5rem);
   .auth-row {
     justify-content: center;
     align-items: center;
+    height: calc(100vh - 8.5rem);
+  }
+}
+
+.editor-screen {
+  .split-screen-column {
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -121,12 +130,14 @@ header {
         }
       }
     }
-    .detail-column {
-      width: 12%;
-      background-color: #212121;
-    }
-    .editor-column {
-      width: 85%;
+    .split-screen-column {
+      width: calc(100vw - 3%);
+      .detail-column {
+        background-color: #212121;
+      }
+      .gutter {
+        background-color: #eee;
+      }
     }
   }
   .editor-topnav {
@@ -172,7 +183,7 @@ footer {
   .editor-screen {
     .editor-row {
       .sidenav-column {
-        width: 8%;
+        width: 10%;
         .editor-sidenav-container {
           .list-group-item {
             padding: 15px 10px;
