@@ -55,9 +55,8 @@ header {
 }
 
 .home-screen {
-  min-height: calc(100vh - 5rem - 3.5rem);
+  min-height: 100vh;
   .home-row {
-    min-height: calc(100vh - 5rem - 3.5rem);
     align-items: center;
     .homeScreen-title {
       font-size: 4rem;
@@ -78,19 +77,74 @@ header {
 }
 
 .about-screen {
-  min-height: calc(100vh - 5rem - 3.5rem);
+  min-height: 100vh;
   .about-row {
-    min-height: calc(100vh - 5rem - 3.5rem);
     align-items: center;
   }
 }
 
 .auth-screen {
-  min-height: calc(100vh - 5rem - 3.5rem);
+  min-height: calc(100vh);
   .auth-row {
-    min-height: calc(100vh - 5rem - 3.5rem);
     justify-content: center;
     align-items: center;
+  }
+}
+
+.editor-screen {
+  min-height: calc(90vh - 3%);
+  .editor-row {
+    height: calc(90vh - 3%);
+    display: flex;
+    flex-direction: row;
+    .sidenav-column {
+      width: 3%;
+      .editor-sidenav-container {
+        background-color: #1b1b1b;
+        height: 100%;
+        .list-group-item {
+          background-color: #1b1b1b;
+          color: grey;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 18px 10px;
+          border: none;
+          .fa-file,
+          .fa-search,
+          .fa-cog {
+            font-size: 26px;
+          }
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+    .detail-column {
+      width: 12%;
+      background-color: #212121;
+    }
+    .editor-column {
+      width: 85%;
+    }
+  }
+  .editor-topnav {
+    height: 4vh;
+    background-color: black;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .editor-id {
+      vertical-align: middle;
+      letter-spacing: 1px;
+      display: inline-block;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -111,5 +165,35 @@ footer {
 
   .btn-row {
     justify-content: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .editor-screen {
+    .editor-row {
+      .sidenav-column {
+        width: 8%;
+        .editor-sidenav-container {
+          .list-group-item {
+            padding: 15px 10px;
+            .fa-file,
+            .fa-search,
+            .fa-cog {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .editor-screen {
+    .editor-row {
+      .sidenav-column {
+        width: 7%;
+      }
+    }
   }
 }
