@@ -1,13 +1,11 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Typography } from '@mui/material'
 
 const Footer = () => {
   return (
     <footer>
       <Container>
-        <Row>
-          <Col className='text-center py-3'>Copyright &copy; CodeSplit</Col>
-        </Row>
+        <Typography textAlign='center'>Copyright &copy; CodeSplit</Typography>
       </Container>
     </footer>
   )
