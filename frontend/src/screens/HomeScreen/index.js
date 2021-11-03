@@ -17,17 +17,17 @@ import Image from 'material-ui-image'
 import { useTheme } from '@emotion/react'
 import { languages } from '../../data/languages'
 
-import NavBar from '../../components/NavBar'
-import Footer from '../../components/Footer'
 import CreateForm from './dialog-forms/create-form'
 import JoinForm from './dialog-forms/join-form'
 
 const HomeScreen = () => {
+  // states
   const [open, setOpen] = useState(false)
   const [type, setType] = useState('create')
   const [language, setLanguage] = useState('C++')
   const [roomId, setRoomId] = useState('')
 
+  // themes and
   const theme = useTheme()
   const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'))
   const matchDownMD = useMediaQuery(theme.breakpoints.down('md'))
@@ -44,9 +44,8 @@ const HomeScreen = () => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1, minHeight: '100vh' }}>
-        <NavBar />
-        <Container sx={{ minHeight: '85vh' }}>
+      <Box sx={{ flexGrow: 1, minHeight: '80vh' }}>
+        <Container sx={{ minHeight: 'inherit' }}>
           <Grid
             sx={{ minHeight: 'inherit' }}
             justifyContent='center'
@@ -146,7 +145,6 @@ const HomeScreen = () => {
             </Grid>
           </Grid>
         </Container>
-        <Footer />
       </Box>
 
       <Dialog fullWidth={true} open={open} onClose={handleCreate}>

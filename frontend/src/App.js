@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { createTheme, ThemeProvider } from '@mui/material'
 import io from 'socket.io-client'
 
+import NavBar from './components/NavBar/'
+import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen/'
+import LoginScreen from './screens/LoginScreen/'
 
 // import AboutScreen from './screens/AboutScreen'
 // import LoginScreen from './screens/LoginScreen'
@@ -21,13 +24,15 @@ const App = () => {
   return (
     <ThemeProvider theme={setTheme}>
       <Router>
+        <NavBar />
         <main>
-          {/* <Route path='/login' component={LoginScreen} />
-          <Route path='/register' component={RegisterScreen} /> */}
+          <Route path='/login' component={LoginScreen} />
+          {/* <Route path='/register' component={RegisterScreen} /> */}
           <Route exact path='/' component={HomeScreen} />
           {/* <Route path='/about' component={AboutScreen} />
           <Route path='/editor/:room' component={EditorScreen} /> */}
         </main>
+        <Footer />
       </Router>
     </ThemeProvider>
   )
