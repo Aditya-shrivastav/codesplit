@@ -1,40 +1,55 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
 import {
   Box,
   Toolbar,
   AppBar,
   Typography,
-  Button,
   Container,
+  IconButton,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material'
+import { Menu } from '@mui/icons-material'
+import AppBarItems from './AppBarItems'
+import SideBar from './SideBar'
 
 const NavBar = () => {
+  const theme = useTheme()
+  const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'))
+
+  const [open, setOpen] = useState(false)
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
         <Container>
           <Toolbar>
-            {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
-            <Typography
-              sx={{ letterSpacing: '1px', flexGrow: 1 }}
-              variant='h4'
-              component='h1'
-            >
-              CodeSplit
-            </Typography>
-            <Link to='/login'>
-              <Button color='inherit'>Login</Button>
-            </Link>
-            <Button color='inherit'>Login</Button>
+            {matchDownSM && (
+              <IconButton
+                size='large'
+                edge='start'
+                color='inherit'
+                aria-label='menu'
+                sx={{ mr: 1 }}
+                onClick={() => setOpen(!open)}
+              >
+                <Menu />
+              </IconButton>
+            )}
+            {matchDownSM ? (
+              <SideBar setOpen={setOpen} open={open} />
+            ) : (
+              <>
+                <Typography
+                  sx={{ letterSpacing: '1px', flexGrow: 1 }}
+                  variant='h4'
+                  component='h1'
+                >
+                  CodeSplit
+                </Typography>
+                <AppBarItems />
+              </>
+            )}
           </Toolbar>
         </Container>
       </AppBar>

@@ -17,7 +17,7 @@ import RegisterScreen from './screens/RegisterScreen/'
 const App = () => {
   const setTheme = createTheme({
     palette: {
-      mode: 'dark',
+      mode: 'light',
     },
   })
   return (
