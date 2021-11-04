@@ -27,16 +27,16 @@ const SidebarItem = (props) => {
 
   return (
     <Box onClick={() => setOpen(!open)} sx={{ width: 250 }}>
-      <DrawerHeader>
+      <DrawerHeader key='closeBtn'>
         <IconButton>
           <ArrowBackIos />
         </IconButton>
       </DrawerHeader>
       <Divider />
       <List>
-        {ListItems.slice(0, 3).map((x) => (
-          <Link to={x === 'Home' ? '/' : `/${x.toLowerCase()}`}>
-            <ListItem button key={x}>
+        {ListItems.slice(0, 3).map((x, index) => (
+          <Link key={index + 1} to={x === 'Home' ? '/' : `/${x.toLowerCase()}`}>
+            <ListItem button>
               <ListItemIcon>
                 <Info />
               </ListItemIcon>
@@ -47,9 +47,9 @@ const SidebarItem = (props) => {
       </List>
       <Divider />
       <List>
-        {ListItems.slice(3, 4).map((item) => (
-          <Link to={`/${item.toLowerCase()}`}>
-            <ListItem button key={item}>
+        {ListItems.slice(3, 4).map((item, index) => (
+          <Link key={index + 1} to={`/${item.toLowerCase()}`}>
+            <ListItem button>
               <ListItemIcon>
                 <Info />
               </ListItemIcon>
