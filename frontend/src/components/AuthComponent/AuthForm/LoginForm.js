@@ -21,17 +21,17 @@ const LoginForm = (props) => {
           margin='normal'
           required
           id='email'
+          type='email'
           label='Email Address'
           name='email'
           autoComplete='email'
-          autofocus
+          autoFocus
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <TextField
           margin='normal'
           required
-          fullWidth
           name='password'
           label='Password'
           type='password'

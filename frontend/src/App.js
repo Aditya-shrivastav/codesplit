@@ -7,10 +7,9 @@ import NavBar from './components/NavBar/'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen/'
 import LoginScreen from './screens/LoginScreen/'
+import RegisterScreen from './screens/RegisterScreen/'
 
 // import AboutScreen from './screens/AboutScreen'
-// import LoginScreen from './screens/LoginScreen'
-// import RegisterScreen from './screens/RegisterScreen'
 // import EditorScreen from './screens/EditorScreen'
 
 // const socket = io.connect('http://localhost:5000')
@@ -18,7 +17,7 @@ import LoginScreen from './screens/LoginScreen/'
 const App = () => {
   const setTheme = createTheme({
     palette: {
-      mode: 'light',
+      mode: 'dark',
     },
   })
   return (
@@ -27,7 +26,7 @@ const App = () => {
         <NavBar />
         <main>
           <Route path='/login' component={LoginScreen} />
-          {/* <Route path='/register' component={RegisterScreen} /> */}
+          <Route path='/register' component={RegisterScreen} />
           <Route exact path='/' component={HomeScreen} />
           {/* <Route path='/about' component={AboutScreen} />
           <Route path='/editor/:room' component={EditorScreen} /> */}
