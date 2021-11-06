@@ -9,6 +9,7 @@ import HomeScreen from './screens/HomeScreen/'
 import LoginScreen from './screens/LoginScreen/'
 import RegisterScreen from './screens/RegisterScreen/'
 import ContactScreen from './screens/ContactScreen'
+import EditorScreen from './screens/EditorScreen/'
 
 // import AboutScreen from './screens/AboutScreen'
 // import EditorScreen from './screens/EditorScreen'
@@ -30,8 +31,8 @@ const App = () => {
           <Route path='/register' component={RegisterScreen} />
           <Route exact path='/' component={HomeScreen} />
           <Route path='/contact' component={ContactScreen} />
-          {/* <Route path='/about' component={AboutScreen} />
-          <Route path='/editor/:room' component={EditorScreen} /> */}
+          {/* <Route path='/about' component={AboutScreen} /> */}
+          <Route path='/editor/:room' component={EditorScreen} />
         </main>
         <Footer />
       </Router>
