@@ -4,7 +4,7 @@
   "description": "real-time collaborative text-editor",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon backend/index.js",
+    "server": "nodemon backend/server.js",
     "client": "npm --prefix frontend start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -13,6 +13,7 @@
   "dependencies": {
     "concurrently": "^6.3.0",
     "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "http": "^0.0.1-security",
