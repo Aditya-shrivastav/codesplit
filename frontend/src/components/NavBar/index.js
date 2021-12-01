@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
   Box,
   Toolbar,
@@ -45,7 +46,7 @@ const NavBar = () => {
                   variant='h4'
                   component='h1'
                 >
-                  CodeSplit
+                  <Link to='/'>CodeSplit</Link>
                 </Typography>
                 <AppBarItems />
               </>

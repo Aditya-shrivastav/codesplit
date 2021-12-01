@@ -22,6 +22,7 @@ const RegisterForm = ({ formProps }) => {
     setFirstName,
     lastName,
     setLastName,
+    submitHandler,
   } = formProps
 
   return (
@@ -116,6 +117,7 @@ const RegisterForm = ({ formProps }) => {
           variant='contained'
           color='primary'
           size='large'
+          onClick={submitHandler}
         >
           Register
         </Button>

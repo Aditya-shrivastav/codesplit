@@ -10,9 +10,7 @@ import LoginScreen from './screens/LoginScreen/'
 import RegisterScreen from './screens/RegisterScreen/'
 import ContactScreen from './screens/ContactScreen'
 import EditorScreen from './screens/EditorScreen/'
-
 // import AboutScreen from './screens/AboutScreen'
-// import EditorScreen from './screens/EditorScreen'
 
 // const socket = io.connect('http://localhost:5000')
 

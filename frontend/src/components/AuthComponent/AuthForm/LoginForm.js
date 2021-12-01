@@ -9,7 +9,8 @@ import {
 } from '@mui/material'
 
 const LoginForm = (props) => {
-  const { email, setEmail, password, setPassword, matchDownMD } = props
+  const { email, setEmail, password, setPassword, matchDownMD, submitHandler } =
+    props
 
   return (
     <>
@@ -45,6 +46,7 @@ const LoginForm = (props) => {
           variant='contained'
           color='primary'
           size='large'
+          onClick={submitHandler}
         >
           Sign In
         </Button>

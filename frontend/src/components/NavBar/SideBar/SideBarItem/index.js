@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import {
   List,
   Box,
@@ -10,7 +11,16 @@ import {
   IconButton,
   styled,
 } from '@mui/material'
-import { Info, ArrowBackIos } from '@mui/icons-material'
+import {
+  InfoOutlined,
+  ArrowBackIos,
+  HomeOutlined,
+  EmailOutlined,
+  PersonOutline,
+  LogoutOutlined,
+  LoginOutlined,
+} from '@mui/icons-material'
+import { LogoutUser } from '../../../../store/actions/userActions'
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -24,6 +34,16 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const SidebarItem = (props) => {
   const { open, setOpen } = props
   const ListItems = ['Home', 'About', 'Contact', 'Login']
+  const IconList = [
+    <HomeOutlined />,
+    <InfoOutlined />,
+    <EmailOutlined />,
+    <LoginOutlined />,
+  ]
+
+  const dispatch = useDispatch()
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
 
   return (
     <Box onClick={() => setOpen(!open)} sx={{ width: 250 }}>
@@ -37,9 +57,7 @@ const SidebarItem = (props) => {
         {ListItems.slice(0, 3).map((x, index) => (
           <Link key={index + 1} to={x === 'Home' ? '/' : `/${x.toLowerCase()}`}>
             <ListItem button>
-              <ListItemIcon>
-                <Info />
-              </ListItemIcon>
+              <ListItemIcon>{IconList[index]}</ListItemIcon>
               <ListItemText primary={x} />
             </ListItem>
           </Link>
@@ -47,16 +65,33 @@ const SidebarItem = (props) => {
       </List>
       <Divider />
       <List>
-        {ListItems.slice(3, 4).map((item, index) => (
-          <Link key={index + 1} to={`/${item.toLowerCase()}`}>
-            <ListItem button>
+        {!userInfo &&
+          ListItems.slice(3, 4).map((item, index) => (
+            <Link key={index + 1} to={`/${item.toLowerCase()}`}>
+              <ListItem button>
+                <ListItemIcon>{IconList[3]}</ListItemIcon>
+                <ListItemText primary={item} />
+              </ListItem>
+            </Link>
+          ))}
+        {userInfo && (
+          <>
+            <Link to='/user/profile'>
+              <ListItem button>
+                <ListItemIcon>
+                  <PersonOutline />
+                </ListItemIcon>
+                <ListItemText primary={'Profile'} />
+              </ListItem>
+            </Link>
+            <ListItem button onClick={() => dispatch(LogoutUser())}>
               <ListItemIcon>
-                <Info />
+                <LogoutOutlined />
               </ListItemIcon>
-              <ListItemText primary={item} />
+              <ListItemText primary={'Logout'} />
             </ListItem>
-          </Link>
-        ))}
+          </>
+        )}
       </List>
     </Box>
   )
