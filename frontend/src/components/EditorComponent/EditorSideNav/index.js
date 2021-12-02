@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stack, ListItem, List, useTheme } from '@mui/material'
+import { Box, ListItem, List, useTheme, IconButton } from '@mui/material'
 import {
   Search,
   InsertDriveFileOutlined,
@@ -20,32 +20,31 @@ const EditorSideNav = () => {
     <SettingsOutlined />,
   ]
   return (
-    <Stack
+    <Box
+      className='editor-sidenav-container'
       sx={{
-        width: '3%',
         [theme.breakpoints.down('md')]: {
-          width: '10%',
+          width: '100%',
         },
         backgroundColor: '#1b1b1b',
         borderRight: '0.5px solid grey',
       }}
-      direction='column'
     >
       <List>
-        {icons.map((x) => (
+        {icons.map((x, i) => (
           <ListItem
+            key={i++}
             sx={{
-              color: 'white',
               padding: '10px 0',
               justifyContent: 'center',
               alignItems: 'center',
             }}
           >
-            {x}
+            <IconButton sx={{ color: 'white' }}>{x}</IconButton>
           </ListItem>
         ))}
       </List>
-    </Stack>
+    </Box>
   )
 }
 

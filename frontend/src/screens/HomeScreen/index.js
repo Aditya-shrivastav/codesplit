@@ -14,13 +14,14 @@ import {
   DialogTitle,
 } from '@mui/material'
 import Image from 'material-ui-image'
+import { v4 as uuid } from 'uuid'
 import { useTheme } from '@emotion/react'
 import { languages } from '../../data/languages'
 
 import CreateForm from './dialog-forms/create-form'
 import JoinForm from './dialog-forms/join-form'
 
-const HomeScreen = () => {
+const HomeScreen = ({ _, history }) => {
   // states
   const [open, setOpen] = useState(false)
   const [type, setType] = useState('create')
@@ -40,6 +41,17 @@ const HomeScreen = () => {
   const handleJoin = () => {
     setType('join')
     setOpen(true)
+  }
+
+  const createRoom = () => {
+    const uniqueId = uuid()
+    history.push(`/editor/${uniqueId}`)
+  }
+
+  const joinRoom = () => {
+    if (roomId !== '') {
+      history.push(`/editor/${roomId}`)
+    }
   }
 
   return (
@@ -164,12 +176,16 @@ const HomeScreen = () => {
               languages={languages}
             />
           ) : (
-            <JoinForm setRoomId={setRoomId} />
+            <JoinForm roomId={roomId} setRoomId={setRoomId} />
           )}
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>Cancel</Button>
-          <Button onClick={() => setOpen(false)}>Create</Button>
+          {type === 'create' ? (
+            <Button onClick={() => createRoom()}>Create</Button>
+          ) : (
+            <Button onClick={() => joinRoom()}>Join</Button>
+          )}
         </DialogActions>
       </Dialog>
     </>

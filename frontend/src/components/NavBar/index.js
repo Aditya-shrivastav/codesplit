@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Box,
   Toolbar,
   AppBar,
   Typography,
@@ -21,40 +20,38 @@ const NavBar = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
-        <Container>
-          <Toolbar>
-            {matchDownSM && (
-              <IconButton
-                size='large'
-                edge='start'
-                color='inherit'
-                aria-label='menu'
-                sx={{ mr: 1 }}
-                onClick={() => setOpen(!open)}
+    <AppBar position='static' style={{ height: '100%' }}>
+      <Container>
+        <Toolbar>
+          {matchDownSM && (
+            <IconButton
+              size='large'
+              edge='start'
+              color='inherit'
+              aria-label='menu'
+              sx={{ mr: 1 }}
+              onClick={() => setOpen(!open)}
+            >
+              <Menu />
+            </IconButton>
+          )}
+          {matchDownSM ? (
+            <SideBar setOpen={setOpen} open={open} />
+          ) : (
+            <>
+              <Typography
+                sx={{ letterSpacing: '1px', flexGrow: 1 }}
+                variant='h4'
+                component='h1'
               >
-                <Menu />
-              </IconButton>
-            )}
-            {matchDownSM ? (
-              <SideBar setOpen={setOpen} open={open} />
-            ) : (
-              <>
-                <Typography
-                  sx={{ letterSpacing: '1px', flexGrow: 1 }}
-                  variant='h4'
-                  component='h1'
-                >
-                  <Link to='/'>CodeSplit</Link>
-                </Typography>
-                <AppBarItems />
-              </>
-            )}
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </Box>
+                <Link to='/'>CodeSplit</Link>
+              </Typography>
+              <AppBarItems />
+            </>
+          )}
+        </Toolbar>
+      </Container>
+    </AppBar>
   )
 }
 

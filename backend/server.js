@@ -32,7 +32,14 @@ const io = new Server(server, {
 })
 
 io.on('connection', (socket) => {
-  console.log(`user with ${socket.id} connected`)
+  socket.on('join_room', (room) => {
+    socket.join(room)
+    console.log(`user with id = ${socket.id} joined room ${room}`)
+  })
+
+  socket.on('change', (data) => {
+    socket.broadcast.to(data.room).emit('recieve', data)
+  })
 
   socket.on('disconnect', () => {
     console.log(`user with is ${socket.id} leave the app`)

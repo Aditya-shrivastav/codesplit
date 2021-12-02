@@ -1,43 +1,54 @@
-import React from 'react'
-import { Box, Stack } from '@mui/material'
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import Split from 'react-split'
 
 import Editor from '../../components/EditorComponent/CodeEditor'
-import EditorSideNav from '../../components/EditorComponent/EditorSideNav/'
-import { border } from '@mui/system'
+import EditorSideNav from '../../components/EditorComponent/EditorSideNav'
 
-const EditorScreen = () => {
+const EditorScreen = (props) => {
+  const { room } = useParams()
+  const { socket } = props
+
+  useEffect(() => {
+    socket.emit('join_room', room)
+  }, [room, socket])
+
   return (
-    <Box style={{ minHeight: 'calc(100vh - 8rem)' }}>
-      <Stack container direction='row'>
-        <EditorSideNav />
-        <Stack
-          direction='row'
-          sx={{
-            margin: 0,
-            width: '97%',
-          }}
+    <div className='editor-screen'>
+      <div className='editor-row'>
+        <div className='sidenav-column'>
+          <EditorSideNav />
+        </div>
+        <Split
+          className='split-screen-column'
+          sizes={[12, 88]}
+          minSize={[5, 95]}
+          expandToMin={false}
+          gutterSize={3}
+          gutterAlign='center'
+          snapOffset={30}
+          dragInterval={1}
+          direction='horizontal'
+          cursor='col-resize'
         >
-          <Box
-            component='div'
-            sx={{
-              backgroundColor: '#212121',
-              borderLeft: '0.5px solid grey',
-              borderRight: '0.5px solid grey',
-              width: '10%',
-            }}
-          ></Box>
-          <Box
-            component='div'
-            sx={{
-              width: '90%',
-              borderLeft: '0.5px solid grey',
-            }}
-          >
-            <Editor />
-          </Box>
-        </Stack>
-      </Stack>
-    </Box>
+          <div className='detail-column'>
+            <h4
+              style={{
+                color: 'white',
+                fontFamily: 'sans-serif',
+                marginLeft: '20px',
+              }}
+              className='m-0'
+            >
+              File Name
+            </h4>
+          </div>
+          <div className='editor-column'>
+            <Editor socket={socket} room={room} />
+          </div>
+        </Split>
+      </div>
+    </div>
   )
 }
 

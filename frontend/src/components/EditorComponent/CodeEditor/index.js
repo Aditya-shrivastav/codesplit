@@ -1,21 +1,36 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import CodeMirror from '@uiw/react-codemirror'
 import { cpp } from '@codemirror/lang-cpp'
 import { oneDarkTheme, oneDark } from '@codemirror/theme-one-dark'
-import { EditorView } from '@codemirror/view'
 
-const Editor = () => {
-  const [code, setCode] = useState('Hello World')
+const Editor = (props) => {
+  const [code, setCode] = useState('Hello Developers')
+
+  const { room, socket } = props
+
+  useEffect(() => {
+    socket.on('recieve', (payload) => {
+      setCode(payload.code)
+    })
+  }, [socket, code])
+
+  const onCodeChange = (value, update) => {
+    setCode(value)
+    socket.emit('change', {
+      room,
+      code: value,
+    })
+  }
 
   return (
     <>
       <CodeMirror
         className='editor'
-        height='calc(100vh - 7rem)'
-        value={'Hello Developer!!!'}
+        height='93vh'
+        value={code}
         extensions={[cpp(), oneDarkTheme, oneDark]}
         onChange={(value, viewUpdate) => {
-          setCode(value)
+          onCodeChange(value, viewUpdate)
         }}
         theme='dark'
         basicSetup={true}

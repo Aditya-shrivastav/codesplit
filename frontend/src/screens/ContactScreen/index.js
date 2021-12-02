@@ -39,8 +39,8 @@ const ContactScreen = () => {
         alignItems='center'
         sx={{
           minHeight: 'inherit',
-          mt: 6,
-          mb: 5,
+          paddingTop: 6,
+          pb: 5,
         }}
       >
         <Card

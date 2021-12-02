@@ -29,72 +29,72 @@ a {
 //   outline: none;
 // }
 
-header {
-  .brand {
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-  .nav-link {
-    font-size: 1.3rem;
-  }
-}
+// header {
+//   .brand {
+//     font-size: 1.8rem;
+//     font-weight: 600;
+//   }
+//   .nav-link {
+//     font-size: 1.3rem;
+//   }
+// }
 
-.btn {
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-  padding: 8px 25px;
-  border-radius: 5px;
-}
+// .btn {
+//   text-transform: uppercase;
+//   letter-spacing: 0.7px;
+//   padding: 8px 25px;
+//   border-radius: 5px;
+// }
 
-.btn:focus,
-.navbar-toggler:focus {
-  box-shadow: none;
-}
+// .btn:focus,
+// .navbar-toggler:focus {
+//   box-shadow: none;
+// }
 
-.card {
-  background-color: #fff;
-  border: none;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
-}
+// .card {
+//   background-color: #fff;
+//   border: none;
+//   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+// }
 
-.home-screen {
-  min-height: 100vh;
-  .home-row {
-    height: calc(100vh - 4.5rem - 4rem);
-    align-items: center;
-    .homeScreen-title {
-      font-size: 4rem;
-      font-weight: 500;
-    }
-    .homeScreen-btn {
-      width: 150px;
-      border-radius: 25px;
-      font-size: 18px;
-      font-weight: 550;
-    }
-    .btn-row {
-      .btn {
-        border-radius: 25px;
-      }
-    }
-  }
-}
+// .home-screen {
+//   min-height: 100vh;
+//   .home-row {
+//     height: calc(100vh - 4.5rem - 4rem);
+//     align-items: center;
+//     .homeScreen-title {
+//       font-size: 4rem;
+//       font-weight: 500;
+//     }
+//     .homeScreen-btn {
+//       width: 150px;
+//       border-radius: 25px;
+//       font-size: 18px;
+//       font-weight: 550;
+//     }
+//     .btn-row {
+//       .btn {
+//         border-radius: 25px;
+//       }
+//     }
+//   }
+// }
 
-.about-screen {
-  min-height: 100vh;
-  .about-row {
-    align-items: center;
-  }
-}
+// .about-screen {
+//   min-height: 100vh;
+//   .about-row {
+//     align-items: center;
+//   }
+// }
 
-.auth-screen {
-  min-height: calc(100vh - 8.5rem);
-  .auth-row {
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 8.5rem);
-  }
-}
+// .auth-screen {
+//   min-height: calc(100vh - 8.5rem);
+//   .auth-row {
+//     justify-content: center;
+//     align-items: center;
+//     height: calc(100vh - 8.5rem);
+//   }
+// }
 
 .editor-screen {
   .split-screen-column {
@@ -104,9 +104,7 @@ header {
 }
 
 .editor-screen {
-  min-height: calc(90vh - 3%);
   .editor-row {
-    height: calc(90vh - 3%);
     display: flex;
     flex-direction: row;
     .sidenav-column {
@@ -114,23 +112,6 @@ header {
       .editor-sidenav-container {
         background-color: #1b1b1b;
         height: 100%;
-        .list-group-item {
-          background-color: #1b1b1b;
-          color: grey;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 18px 10px;
-          border: none;
-          .fa-file,
-          .fa-search,
-          .fa-cog {
-            font-size: 26px;
-          }
-          &:hover {
-            color: #fff;
-          }
-        }
       }
     }
     .split-screen-column {
@@ -140,23 +121,6 @@ header {
       }
       .gutter {
         background-color: #eee;
-      }
-    }
-  }
-  .editor-topnav {
-    height: 4vh;
-    background-color: black;
-    color: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .editor-id {
-      vertical-align: middle;
-      letter-spacing: 1px;
-      display: inline-block;
-      cursor: pointer;
-      &:hover {
-        color: #fff;
       }
     }
   }
@@ -182,31 +146,21 @@ footer {
   }
 }
 
-@media (max-width: 800px) {
-  .editor-screen {
-    .editor-row {
-      .sidenav-column {
-        width: 10%;
-        .editor-sidenav-container {
-          .list-group-item {
-            padding: 15px 10px;
-            .fa-file,
-            .fa-search,
-            .fa-cog {
-              font-size: 20px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 1400px) {
   .editor-screen {
     .editor-row {
       .sidenav-column {
         width: 7%;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .editor-screen {
+    .editor-row {
+      .sidenav-column {
+        width: 15%;
       }
     }
   }
