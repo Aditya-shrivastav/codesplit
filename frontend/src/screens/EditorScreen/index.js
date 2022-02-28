@@ -40,7 +40,7 @@ const EditorScreen = (props) => {
               }}
               className='m-0'
             >
-              File Name
+              main.cpp
             </h4>
           </div>
           <div className='editor-column'>
