@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+
 import Split from 'react-split'
 
 import Editor from '../../components/EditorComponent/CodeEditor'
 import EditorSideNav from '../../components/EditorComponent/EditorSideNav'
+import VideoSideBar from '../../components/EditorComponent/VideoSideBar'
 
 const EditorScreen = (props) => {
   const { room } = useParams()
   const { socket } = props
 
   useEffect(() => {
-    socket.emit('join_room', room)
+
+    socket.emit('join_room', room);
+    socket.emit('user_joins', room);
+
   }, [room, socket])
 
   return (
@@ -47,6 +52,9 @@ const EditorScreen = (props) => {
             <Editor socket={socket} room={room} />
           </div>
         </Split>
+        <div className='video-column'>
+          <VideoSideBar socket={socket} room={room} />
+        </div>
       </div>
     </div>
   )

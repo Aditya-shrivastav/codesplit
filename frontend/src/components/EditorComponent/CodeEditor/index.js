@@ -11,6 +11,7 @@ const Editor = (props) => {
   useEffect(() => {
     socket.on('recieve', (payload) => {
       setCode(payload.code)
+      console.log("Editor", payload)
     })
   }, [socket, code])
 
